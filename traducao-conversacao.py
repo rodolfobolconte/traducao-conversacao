@@ -1,9 +1,14 @@
-import simpleaudio as sa
+from gtts import gTTS
+from playsound import playsound
+import os
 
-wave_obj = sa.WaveObject.from_wave_file("A:/Downloads/Temporário/hello.mp3")
-play_obj = wave_obj.play()
-play_obj.wait_done()
+tts = gTTS('Bom dia Rodolfo, você está bem?', lang='pt-br')
 
+arquivo = 'audio.mp3'
+
+tts.save(arquivo)
+playsound(arquivo)
+os.remove(arquivo)
 exit()
 
 from googletrans import Translator
